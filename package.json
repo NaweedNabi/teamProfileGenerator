@@ -1,0 +1,26 @@
+{
+  "name": "teamprofilegenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NaweedNabi/teamProfileGenerator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NaweedNabi/teamProfileGenerator/issues"
+  },
+  "homepage": "https://github.com/NaweedNabi/teamProfileGenerator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
