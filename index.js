@@ -12,56 +12,55 @@ let EmployeeArray = new Array();
 // Array of inquirer questions that are prompted for all employees.
 const EmployeeQuestions = [
     {
-        type: "input",
-        message: "Please enter the name of the employee:",
-        name: "name"
+     type: "input",
+     message: "Please enter the name of the employee:",
+     name: "name"
     },
     {
-        type: "input",
-        message: "Please enter the id of the employee:",
-        name: "id"
+     type: "input",
+     message: "Please enter the id of the employee:",
+     name: "id"
     },
     {
-        type: "input",
-        message: "Please enter the work email address of the employee:",
-        name: "email"
+     type: "input",
+     message: "Please enter the work email address of the employee:",
+     name: "email"
     },
     {
-        type: "list",
-        message: "Please select a role/position for this employee:",
-        name: "role",
-        choices: [
+     type: "list",
+     message: "Please select a role/position for this employee:",
+     name: "role",
+     choices: [
             "Manager",
             "Engineer",
             "Intern"
         ]
-    }
-]
+}]
 
 // Array of inquirer question specifically for the manager class.
 const ManagerQuestions = [
     {
-        type: "input",
-        message: "Please enter the office number of the manager:",
-        name: "officeNumber"
+     type: "input",
+     message: "Please enter the office number of the manager:",
+     name: "officeNumber"
     }
 ]
 
 // Array of inquirer question specifically for the engineer class.
 const EngineerQuestions = [
     {
-        type: "input",
-        message: "Please enter the GitHub user name of the engineer:",
-        name: "github"
+     type: "input",
+     message: "Please enter the GitHub user name of the engineer:",
+     name: "github"
     }
 ]
 
 // Array of inquirer question specifically for the intern class.
 const InternQuestions = [
     {
-        type: "input",
-        message: "Please enter the school that the intern attends:",
-        name: "school"
+     type: "input",
+     message: "Please enter the school that the intern attends:",
+     name: "school"
     }
 ]
 
@@ -140,30 +139,30 @@ const CreateHTML = async (array) => {
                 "No"
             ]
         }
-    ]).then(async (response) => {
-        var CreateAnotherEmployee = response.CreateEmployee;
+]).then(async (response) => {
+ var CreateAnotherEmployee = response.CreateEmployee;
 
-        if (await CreateAnotherEmployee === 'Yes') {
+if (await CreateAnotherEmployee === 'Yes') {
             inquirerEmployee();
-        } else if (await CreateAnotherEmployee === 'No') {
+ } else if (await CreateAnotherEmployee === 'No') {
 
-            // If the output directory does not exist, then it creates the ouput directory for the user before creating the team.html file.
-            if (!fs.existsSync(OUTPUT_DIR)) {
-                fs.mkdirSync(OUTPUT_DIR)
-            }
+ // If the output directory does not exist, then it creates the ouput directory for the user before creating the team.html file.
+if (!fs.existsSync(OUTPUT_DIR)) {
+    fs.mkdirSync(OUTPUT_DIR)
+}
             
-            fs.writeFile(outputPath, render(array), (err) => {
+fs.writeFile(outputPath, render(array), (err) => {
         
-                if (err) {
-                    return console.log(err);
-                }
+    if (err) {
+         return console.log(err);
+    }
             
-                console.log("Your team.html file has been created in the output folder.");
-            });
+    console.log("Your team.html file has been created in the output folder.");
+});
 
         }
     })
 }
 
-// Run the init function as soon as node runs the app.js file.
+// Run the init function as soon as node runs the index.js file.
 init()
